@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+<head>
+    <link rel="stylesheet" href="css/cerulean.bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/style.css">
+    <meta charset=UTF-8">
+    <title>JavaScript Network Reconnaissance Tool</title>
+</head>
+<body>
+    <img id="logo" src="img/def-logix_logo.jpg" />
+    <div class="container" id="main">
+        <a class="tab" id="tab1" href="javascript:select_tab(1)">Port Scanning</a>
+        <a class="tab" id="tab2" href="javascript:select_tab(2)">Network Scanning</a>
+        <a class="tab" id="tab3" href="javascript:select_tab(3)">Discover My Private IP</a>
+
+        <form name="port_scan" onsubmit="return false">
+            <label for="ip">IP Address: </label>
+            <input type="text" id="ip" size="15">
+
+            <label for="start_port">Start Port: </label>
+            <input type="text" id="start_port" size="5">
+
+            <label for="end_port">End Port: </label>
+            <input type="text" id="end_port" size="5">
+
+            <input type="submit" value="Scan" onclick="scan_ports()">
+
+            <button onclick="reset_scan_out()">Reset</button>
+
+            <br><br>
+            <div>
+                <strong>Note: </strong>
+                Works only on the versions of <strong>FireFox, Chrome(recommended) and Safari</strong> that support WebSockets.
+            </div>
+        </form>
+
+        <form name="network_scan" id="form_ns" onsubmit="return false">
+            <label for="start_ip">Start IP Address: </label>
+            <input type="text" id="start_ip" size="15" />
+
+            <label for="end_ip">End IP Address: </label>
+            <input type="text" id="end_ip" size="15" />
+
+            <label for="port">Port: </label>
+            <input type="text" id="port" size="5" />
+
+            <input type="submit" value="Scan" onclick="scan_network()" />
+            <button onclick="reset_scan_out()">Reset</button>
+
+            <br><br>
+
+            <div>
+                <strong>Note: </strong>
+                Works only on the versions of <strong>FireFox, Chrome(recommended) and Safari</strong> that support WebSockets.
+            </div>
+        </form>
+
+        <form name="private_ip" id="form_pi" onsubmit="return false">
+            This will try to discover your private IP address only if it falls in the 192.168.X.X range.
+            <div id="notes">
+                <strong>Note: </strong>
+                <br>
+                <strong>*</strong> Tuned to scan fast internal networks. Scanning public/slow networks would require retuning.
+                <br>
+                <strong>*</strong> Works only on the versions of <b>FireFox, Chrome(recommended) and Safari</b> that support CrossOriginRequests/WebSockets
+                <br>
+                <strong>*</strong> Currently works on WINDOWS ONLY.
+            </div>
+
+            <input type="submit" value="Start" onclick="find_private_ip()" />
+            <button onclick="reset_scan_out()">Reset</button>
+        </form>
+
+        <fieldset id="fs">
+            <legend>Scan Output</legend>
+            <div id="result"></div>
+            <!-- Where the messages are seen (just text) -->
+            <div id="log"></div>
+        </fieldset>
+    </div>
+    <div id="jsreconLink">
+        <a href="http://www.andlabs.org/tools/jsrecon.html" target="_blank">Check out JSRecon online!</a>
+    </div>
+
+    <script src="js/nmap.js"></script>
+</body>
+</html>

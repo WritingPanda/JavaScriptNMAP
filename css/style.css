@@ -1,0 +1,63 @@
+#logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 456px;
+    height: 125px;
+}
+
+#main {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.tab {
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    text-decoration: none;
+    color: #000;
+    font-size: large;
+    margin-bottom: 20px;
+}
+
+#tab1 {
+    background-color: #222;
+    color: #FFF;
+}
+
+#tab2 {
+    background-color: #CCC;
+}
+
+#tab3 {
+    background-color: #CCC;
+}
+
+form {
+    margin-top: 20px;
+}
+
+input {
+    margin-right: 5px;
+}
+
+#form_ns {
+    display: none;
+}
+
+#form_pi {
+    display: none;
+}
+
+#fs {
+    margin-top: 20px;
+}
+
+#jsreconLink {
+    position: absolute;
+    right: 5px;
+    bottom: 2px;
+}
