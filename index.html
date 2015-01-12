@@ -7,7 +7,7 @@
     <title>JavaScript Network Reconnaissance Tool</title>
 </head>
 <body>
-    <img id="logo" src="img/def-logix_logo.jpg" />
+    <img id="logo" src="img/defseclogo.png" />
     <div class="container" id="main">
         <a class="tab" id="tab1" href="javascript:select_tab(1)">Port Scanning</a>
         <a class="tab" id="tab2" href="javascript:select_tab(2)">Network Scanning</a>
@@ -24,14 +24,16 @@
             <input type="text" id="end_port" size="5">
 
             <input type="submit" value="Scan" onclick="scan_ports()">
-
-            <button onclick="reset_scan_out()">Reset</button>
-
+            <br>
+            Protocol :
+            <input type="radio" name="protocol" value="0" >Cross Origin Requests
+            <input type="radio" name="protocol" value="1" checked>WebSockets
             <br><br>
-            <div>
-                <strong>Note: </strong>
+            <section>
+                <strong>Notes: </strong>
+                <br>
                 Works only on the versions of <strong>FireFox, Chrome(recommended) and Safari</strong> that support WebSockets.
-            </div>
+            </section>
         </form>
 
         <form name="network_scan" id="form_ns" onsubmit="return false">
@@ -45,14 +47,17 @@
             <input type="text" id="port" size="5" />
 
             <input type="submit" value="Scan" onclick="scan_network()" />
-            <button onclick="reset_scan_out()">Reset</button>
-
             <br><br>
-
-            <div>
-                <strong>Note: </strong>
+            <br>
+            Protocol :
+            <input type="radio" name="protocol" value="0" >Cross Origin Requests
+            <input type="radio" name="protocol" value="1" checked>WebSockets
+            <br><br>
+            <section>
+                <strong>Notes: </strong>
+                <br>
                 Works only on the versions of <strong>FireFox, Chrome(recommended) and Safari</strong> that support WebSockets.
-            </div>
+            </section>
         </form>
 
         <form name="private_ip" id="form_pi" onsubmit="return false">
@@ -68,7 +73,6 @@
             </div>
 
             <input type="submit" value="Start" onclick="find_private_ip()" />
-            <button onclick="reset_scan_out()">Reset</button>
         </form>
 
         <fieldset id="fs">
