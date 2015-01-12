@@ -24,10 +24,15 @@
             <input type="text" id="end_port" size="5">
 
             <input type="submit" value="Scan" onclick="scan_ports()">
-            <br>
+
+            <br><br>
+
             Protocol :
-            <input type="radio" name="protocol" value="0" >Cross Origin Requests
-            <input type="radio" name="protocol" value="1" checked>WebSockets
+            <label for="xhr1">Cross Origin Requests</label>
+            <input id="xhr1" type="radio" name="protocol" value="0">
+
+            <label for="webs1">WebSockets</label>
+            <input id="webs1" type="radio" name="protocol" value="1" checked>
             <br><br>
             <section>
                 <strong>Notes: </strong>
@@ -47,12 +52,18 @@
             <input type="text" id="port" size="5" />
 
             <input type="submit" value="Scan" onclick="scan_network()" />
+
             <br><br>
-            <br>
+
             Protocol :
-            <input type="radio" name="protocol" value="0" >Cross Origin Requests
-            <input type="radio" name="protocol" value="1" checked>WebSockets
+            <label for="xhr2">Cross Origin Requests</label>
+            <input id="xhr2" type="radio" name="protocol" value="0">
+
+            <label for="webs2">WebSockets</label>
+            <input id="webs2" type="radio" name="protocol" value="1" checked>
+
             <br><br>
+
             <section>
                 <strong>Notes: </strong>
                 <br>
@@ -61,8 +72,9 @@
         </form>
 
         <form name="private_ip" id="form_pi" onsubmit="return false">
-            This will try to discover your private IP address only if it falls in the 192.168.X.X range.
-            <div id="notes">
+            <p>This will try to discover your private IP address only if it falls in the 192.168.X.X range.</p>
+
+            <section>
                 <strong>Note: </strong>
                 <br>
                 <strong>*</strong> Tuned to scan fast internal networks. Scanning public/slow networks would require retuning.
@@ -70,7 +82,7 @@
                 <strong>*</strong> Works only on the versions of <b>FireFox, Chrome(recommended) and Safari</b> that support CrossOriginRequests/WebSockets
                 <br>
                 <strong>*</strong> Currently works on WINDOWS ONLY.
-            </div>
+            </section>
 
             <input type="submit" value="Start" onclick="find_private_ip()" />
         </form>
